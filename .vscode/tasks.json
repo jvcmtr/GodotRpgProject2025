@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cs build",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}\\RPG_try_2025.csproj"
+      ],
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "gd debug server",
+      "type": "shell",
+      "command": "${config:godot.path}",
+      "args": [
+        "--headless",
+        "--path ${workspaceFolder}",
+        "--remote-debug ${config:debug.address}:${config:debug.port}",
+        "--print-fps",
+      ],
+      "dependsOn": "cs build",
+      "isBackground": true,
+      "problemMatcher":  [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Debugger listening on",
+            "endsPattern": "Debugger listening on"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug",
+      "type": "godot-mono",
+      "request": "attach",
+      "preLaunchTask": "gd debug server",
+      "address": "${config:debug.address}",
+      "port": 6007,
+      "console" : "integratedTerminal",
+      "stopAtEntry": true
+    },
+    {
+      "name": "Atach only",
+      "type": "godot-mono",
+      "request": "attach",
+      "address": "${config:debug.address}",
+      "port": "${config:debug.port}",
+      "console" : "integratedTerminal",
+      "stopAtEntry": true
+    },
+    {
+      "name": "Run headless",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "cs build",
+      "program": "${config:godot.path}",
+      "args": [
+        "--headless",
+        "--script", 
+        "DLL/TestMain.cs",
+        "--quit"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+  ]
+}
