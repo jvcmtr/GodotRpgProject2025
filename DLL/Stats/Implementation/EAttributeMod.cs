@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DLL.Attribute	
+namespace DLL.Stats	
 {
     public enum EAttributeMod{
         ABSOLUTE,

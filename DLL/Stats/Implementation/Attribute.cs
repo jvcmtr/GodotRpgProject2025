@@ -2,40 +2,30 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
-namespace DLL.Attribute	
+namespace DLL.Stats	
 {
 
 
-public class Attribute
-{
+    public class Attribute
+    {
     public int CurrentValue {get; protected set;}
     public int BaseValue {get; protected set;}
-    protected List<AttrModifier> Modifiers = new List<AttrModifier>();
+    protected ModifierGroup Modifiers = new ModifierGroup();
 
     public Attribute(int value){
         CurrentValue = value;
         BaseValue = value;
     }
 
-    public void UpdateBaseValue(int value){
+    public Attribute UpdateBaseValue(int value){
         BaseValue = value;
         UpdateCurrent();
+        return this;
     }
 
-    protected void UpdateCurrent(){
-        var val = BaseValue;
-        // Aplica valores cumulativos no fim
-        Modifiers.ForEach(m => { 
-            if(m.type != EAttributeMod.CUMULATIVE){ val += (int) m.GetBonus(this) ;}
-        }) ;
-
-        Modifiers.ForEach(m => { 
-            if(m.type == EAttributeMod.CUMULATIVE){ val += (int) m.GetBonus(this) ;}
-        }) ;
-
-        CurrentValue = val; 
+    virtual protected void UpdateCurrent(){
+        CurrentValue = (int) Modifiers.CalcModifiers(this);
     }
 
 
@@ -63,11 +53,7 @@ public class Attribute
     /// <returns></returns>
     public Attribute AddModifier(string source, float value, EAttributeMod modType = EAttributeMod.ABSOLUTE)
     {
-        var newMod = new AttrModifier(source, value, modType);
-        var index = Modifiers.FindIndex(m => m.Source == source);
-
-        if (index >= 0) Modifiers[index] = newMod;
-        else Modifiers.Add(newMod);
+        Modifiers.Add(source, value, modType);
         UpdateCurrent();
 
         return this;
@@ -80,7 +66,7 @@ public class Attribute
     /// </summary>
     /// <returns></returns>
     public Attribute RemoveModifier(string source){
-        Modifiers = Modifiers.Where(mod => mod.Source != source).ToList();
+        Modifiers.Remove(source);
         UpdateCurrent();
         return this;
     }
