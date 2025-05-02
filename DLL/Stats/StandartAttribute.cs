@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 namespace DLL.Stats {
-    public class StandartAttribute : Attribute
+    public class StandartAttribute : Attribute<int>
     {
         public int MinValue {get; private set;}
         public int MaxValue {get; private set;}
@@ -10,6 +10,11 @@ namespace DLL.Stats {
         {
             MinValue = minValue;
             MaxValue = maxValue;
+        }
+
+        public StandartAttribute( int a ):base(a){
+            MinValue = 0;
+            MaxValue = 99;
         }
 
         protected override void UpdateCurrent(){

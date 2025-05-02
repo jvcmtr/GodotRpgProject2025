@@ -1,5 +1,8 @@
+using DLL.Combat;
+using DLL.Stats;
 using Godot;
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DLL	
 {
@@ -7,7 +10,8 @@ namespace DLL
 public partial class TestMain : SceneTree
 {
 	public void Main(){
-
+		Attribute<double> a = 5;
+		a += ("", 1.5);
 
 
 
@@ -15,6 +19,11 @@ public partial class TestMain : SceneTree
 
 
 	}
+
+
+
+
+
 
 	public void runTests(){
 		GD.Print("________________________________________________");

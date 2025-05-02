@@ -1,6 +1,5 @@
-using Godot;
+
 using System;
-using System.Runtime.CompilerServices;
 
 namespace DLL.Stats {
     /// <summary>
@@ -8,7 +7,7 @@ namespace DLL.Stats {
     /// </summary>
     public class ResourcePool
     {
-        public Attribute Max = 0;
+        public Attribute<int> Max = 0;
         protected int Ammount = 0;
         public ModifierGroup Cost = new ModifierGroup(); 
         public ModifierGroup Recover = new ModifierGroup(); 
@@ -49,7 +48,7 @@ namespace DLL.Stats {
         }
 
         public bool isFull(){
-            return Ammount == 0;
+            return Ammount == Max;
         }
 
         public double getRatio(){

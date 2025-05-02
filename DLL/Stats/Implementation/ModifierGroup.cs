@@ -6,7 +6,6 @@ using System.Linq;
 namespace DLL.Stats	
 {
 
-
     public class ModifierGroup
     {
         protected List<Modifier> Modifiers = new List<Modifier>();
@@ -33,7 +32,7 @@ namespace DLL.Stats
         /// <param name="value">valor</param>
         /// <param name="type"> Enum usado para definir como o valor será aplicado interpretar o valor</param>
         /// <returns></returns>
-        public void Add(string source, float value, EAttributeMod modType = EAttributeMod.ABSOLUTE)
+        public ModifierGroup Add(string source, float value, EAttributeMod modType = EAttributeMod.ABSOLUTE)
         {
             var newMod = new Modifier(source, value, modType);
             var index = Modifiers.FindIndex(m => m.Source == source);
@@ -41,51 +40,50 @@ namespace DLL.Stats
             if (index >= 0) Modifiers[index] = newMod;
             else Modifiers.Add(newMod);
 
+            return this;
         }
 
         /// <summary>
         /// <i> source não considera capitalização. </i> 
         /// </summary>
         /// <returns></returns>
-        public void Remove(string source){
+        public ModifierGroup Remove(string source){
             Modifiers = Modifiers.Where(mod => mod.Source != source).ToList();
-        }
-
-        public float CalcModifiers(Attribute value){
-            value = Modifiers
-                .Where( m => m.type != EAttributeMod.CUMULATIVE)
-                .Sum( m => (int) m.GetBonus(value)); 
-
-            value += Modifiers
-                .Where( m => m.type == EAttributeMod.CUMULATIVE)
-                .Sum( m => (int) m.GetBonus(value)); 
-
-            return value; 
+            return this;
         }
 
         public float CalcModifiers(float value){
-            value = Modifiers
+            var val = new Attribute<float>(value);
+            val = Modifiers
                 .Where( m => m.type != EAttributeMod.CUMULATIVE)
-                .Sum( m => (int) m.GetBonus((int)value)); 
+                .Sum( m => m.GetBonus(val)); 
 
-            value += Modifiers
+            val += Modifiers
                 .Where( m => m.type == EAttributeMod.CUMULATIVE)
-                .Sum( m => (int) m.GetBonus((int)value)); 
+                .Sum( m => m.GetBonus(val)); 
 
-            return value; 
+            return val; 
         }
 
-        public float GetFinalModifier(int value, EAttributeMod type){
-            var val = new Attribute(value);
+        public float GetFinalModifier(float value, EAttributeMod type){
+            var val = new Attribute<float>(value);
 
             return Modifiers
                 .Where( m => m.type == type)
-                .Sum( m => (int) m.GetBonus(val)); 
+                .Sum( m => m.GetBonus(val)); 
         }
 
-        public List<(string, float, EAttributeMod)> GetModifiers(){
+        public List<(string source, float value, EAttributeMod type)> ToList(){
             return Modifiers.Select(m => (m.Source, m.Value, m.type)).ToList();
         }
+
+
+        // Adiciona modificadores automaticamente
+        public static ModifierGroup operator +(ModifierGroup a, (string, int) b) => a.Add(b.Item1, b.Item2);
+        public static ModifierGroup operator +(ModifierGroup a, (string, float) b) => a.Add(b.Item1, b.Item2);
+        public static ModifierGroup operator *(ModifierGroup a, (string, int) b) => a.Add(b.Item1, b.Item2, EAttributeMod.MULTIPLICATIVE);
+        public static ModifierGroup operator *(ModifierGroup a, (string, float) b) => a.Add(b.Item1, b.Item2, EAttributeMod.MULTIPLICATIVE);
+        public static ModifierGroup operator -(ModifierGroup a, string b) => a.Remove(b);
 
 }
 }

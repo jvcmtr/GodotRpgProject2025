@@ -1,20 +1,29 @@
 using DLL.Stats;
-using Godot;
-using System;
-using System.Security.Cryptography.X509Certificates;
 
 namespace DLL.Combat {
     public class CreatureStats {
-        private ResourcePool Health;
-        private ResourcePool Mana;
-        private ResourcePool Stamina;
+        public ResourcePool Health {get; protected set;}
+        public ResourcePool Mana {get; protected set;}
+        public ResourcePool Stamina {get; protected set;}
 
-        private StandartAttribute Strength;
-        private StandartAttribute Agility;
-        private StandartAttribute Endurance;
-        private StandartAttribute Conviction;
-        private StandartAttribute Inteligence;
-        private StandartAttribute Faith;
-        private StandartAttribute Wisdom;
+        // Placeholder stats
+        public StandartAttribute Strength {get; protected set;}
+        public StandartAttribute Agility {get; protected set;}
+        public StandartAttribute Endurance {get; protected set;}
+        public StandartAttribute Conviction {get; protected set;}
+        public StandartAttribute Inteligence {get; protected set;}
+        public StandartAttribute Wisdom {get; protected set;}
+
+        public CreatureStats(
+            int strength = 0, 
+            int agility = 0, 
+            int endurance = 0, 
+            int conviction = 0, 
+            int inteligence = 0, 
+            int wisdom = 0
+        ){
+            Strength = new StandartAttribute(strength);
+
+        }
     }
 }
