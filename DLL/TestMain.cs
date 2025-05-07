@@ -10,11 +10,7 @@ namespace DLL
 public partial class TestMain : SceneTree
 {
 	public void Main(){
-		Attribute<double> a = 5;
-		a += ("", 1.5);
-
-
-
+		
 
 
 
