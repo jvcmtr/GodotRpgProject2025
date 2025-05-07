@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +12,7 @@ namespace DLL.Stats.Modifiers {
         public virtual IModifierGroup Add(IModifier modifier){
             var existing = Modifiers.FirstOrDefault(m => m.Source == modifier.Source);
             
-            if(existing == null) existing = modifier;
+            if(existing != null) existing = modifier;
             else Modifiers.Add(modifier);
 
             return this;

@@ -1,7 +1,8 @@
-using System;
-using System.Collections;
+using Godot;
 using System.Collections.Generic;
 using DLL.enums;
+using System;
+using System.Linq;
 
 namespace DLL.Formulas {
     public static class ModFormula {
@@ -17,28 +18,28 @@ namespace DLL.Formulas {
 
         public static double GetBonusFor(double baseValue, IList<IModifier> modifiers)
         {
-            double aditive = 0, multiplicative = 0, compound = 1, absolute = 0;
-
+            double aditive = 0, multiplicative = 1, compound = 1, absolute = 0;
+            
             foreach (var m in modifiers)
             {
                 var t = m.Type;
                 switch (t) 
                 {
                     case EModifier.ABSOLUTE:
-                        absolute += m.GetModifier();
+                        absolute += m.GetBonusToAdd();
                         break;
                     case EModifier.ADITIVE:
-                        aditive += m.GetModifier();
+                        aditive += m.GetBonusToAdd();
                         break;
                     case EModifier.MULTIPLICATIVE:
-                        multiplicative += m.GetModifier();
+                        multiplicative += m.GetBonusToAdd();
                         break;
                     case EModifier.MULTIPLICATIVE_COMPOUND:
-                        compound *= m.GetModifier(compound);
+                        compound += m.GetBonusToAdd(compound);
                         break;
                 }
             }
-
+            
             return GetBonusFor(baseValue, aditive, multiplicative, compound, absolute);
         }
 

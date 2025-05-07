@@ -1,6 +1,6 @@
 - [x] Implementar toList (ou IEnumerable) no Modifier Group
 - [x] Implementar operators (igual ao Attribute) no Modifier Group
-- [ ] Testar ( Amuleto que aumenta a força em um valor igual a agilidade )
+- [x] Testar ( Amuleto que aumenta a força em um valor igual a agilidade )
 
 ### Refatorar Interface IAttribute
 - [x] Interface deve incluir só getMod(), getVal(), AddMod(), removeMod();

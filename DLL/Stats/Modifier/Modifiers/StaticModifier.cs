@@ -25,10 +25,10 @@ namespace DLL {
 
         public double Apply(double a)
         {
-            return a + GetModifier(a);
+            return a + GetBonusToAdd(a);
         }
 
-        public double GetModifier(double a = 1)
+        public double GetBonusToAdd(double a = 1)
         {
             return isMultiplicative ? a * (Value -1) : Value;
         }

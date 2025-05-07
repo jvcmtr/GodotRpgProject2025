@@ -11,7 +11,7 @@ namespace DLL.Stats
         T BaseValue { get; }
         T Value {get; }
 
-        public IAttribute<T> AddModifier(string source, float value, EModifier modType = EModifier.ADITIVE);
+        public IAttribute<T> AddModifier(string source, double value, EModifier modType = EModifier.ADITIVE);
         public IAttribute<T> RemoveModifier(string source);
         public List<IModifier> GetModifiers();
     }

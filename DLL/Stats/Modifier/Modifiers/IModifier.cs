@@ -18,7 +18,7 @@ namespace DLL {
         /// </summary>
         /// <param name="a"></param>
         /// <returns></returns>
-        double GetModifier(double a = 1);
+        double GetBonusToAdd(double a = 1);
 
         bool isOfType(EModifier type);
     }

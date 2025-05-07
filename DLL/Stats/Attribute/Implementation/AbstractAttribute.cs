@@ -14,7 +14,7 @@ namespace DLL.Stats {
         public abstract T BaseValue {get; protected set;}
         public abstract T Value { get;}
 
-        public virtual IAttribute<T> AddModifier(string source, float value, EModifier type = EModifier.ADITIVE)
+        public virtual IAttribute<T> AddModifier(string source, double value, EModifier type = EModifier.ADITIVE)
         {
             Modifiers.Add( new StaticModifier(source, value, type) );
             return this;

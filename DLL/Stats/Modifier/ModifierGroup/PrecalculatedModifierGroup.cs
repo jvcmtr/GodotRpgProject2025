@@ -51,16 +51,16 @@ namespace DLL.Stats.Modifiers {
             switch (mod.Type)
             {
                 case EModifier.ABSOLUTE:
-                    ABSOLUTE_PRECALC += isAddModifier? mod.GetModifier() : -mod.GetModifier();
+                    ABSOLUTE_PRECALC += isAddModifier? mod.GetBonusToAdd() : -mod.GetBonusToAdd();
                     break;
                 case EModifier.ADITIVE:
-                    ADITIVE_PRECALC += isAddModifier? mod.GetModifier() : - mod.GetModifier();
+                    ADITIVE_PRECALC += isAddModifier? mod.GetBonusToAdd() : - mod.GetBonusToAdd();
                     break;
                 case EModifier.MULTIPLICATIVE:
-                    MULTIPLICATIVE_PRECALC += isAddModifier? mod.GetModifier() : - mod.GetModifier();
+                    MULTIPLICATIVE_PRECALC += isAddModifier? mod.GetBonusToAdd() : - mod.GetBonusToAdd();
                     break;
                 case EModifier.MULTIPLICATIVE_COMPOUND:
-                    COMPOUND_PRECALC *= isAddModifier? mod.GetModifier() : (1/mod.GetModifier());
+                    COMPOUND_PRECALC *= isAddModifier? mod.GetBonusToAdd() : (1/mod.GetBonusToAdd());
                     break;
             }
         }
