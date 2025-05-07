@@ -1,10 +1,7 @@
-using Godot;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+``` cs
 using System.Numerics;
 
-namespace DLL.Stats	
+namespace DLL.Attribute	
 {
 
     /// <summary>
@@ -56,16 +53,17 @@ namespace DLL.Stats
         public static abstract double operator /(TSelf a, TSelf b);
 
         // Para conseguir operar entre atributos
-        public static abstract T operator +(TSelf a, TSelf b);
-        public static abstract T operator -(TSelf a, TSelf b);
-        public static abstract T operator *(TSelf a, TSelf b);
-        public static abstract T operator %(TSelf a, TSelf b);
+        public static abstract IAttribute<T> operator +(TSelf a, IAttribute<T> b);
+        public static abstract IAttribute<T> operator -(TSelf a, IAttribute<T> b);
+        public static abstract IAttribute<T> operator *(TSelf a, IAttribute<T> b);
+        public static abstract IAttribute<T> operator %(TSelf a, IAttribute<T> b);
 
-        public static abstract bool operator ==(TSelf a, TSelf b);
-        public static abstract bool operator !=(TSelf a, TSelf b);
-        public static abstract bool operator <(TSelf a, TSelf b);
-        public static abstract bool operator >(TSelf a, TSelf b);
-        public static abstract bool operator <=(TSelf a, TSelf b);
-        public static abstract bool operator >=(TSelf a, TSelf b);
+        public static abstract bool operator ==(TSelf a, IAttribute<T> b);
+        public static abstract bool operator !=(TSelf a, IAttribute<T> b);
+        public static abstract bool operator <(TSelf a, IAttribute<T> b);
+        public static abstract bool operator >(TSelf a, IAttribute<T> b);
+        public static abstract bool operator <=(TSelf a, IAttribute<T> b);
+        public static abstract bool operator >=(TSelf a, IAttribute<T> b);
     }
 }
+```

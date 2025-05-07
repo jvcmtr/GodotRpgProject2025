@@ -2,6 +2,13 @@
 # Exemplos de Utilização
 Esta Interface permite que você trate o seu atributo como um Numero.
 
+## ⚠️ Not complete.
+> There still a lot of not mapped edgecases and the objective of this interface is not clear.
+> The use is not intuitive and standartized, It causes more problems than adds convenience
+
+### DO NO USE 
+but here it is anyway:
+
 > **⚠️ Be carefull when doing assignment. with the exception of `+=` and `-=`, all assignments will reset your attributes !!!**
 
 ### Managing Modifiers

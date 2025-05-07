@@ -1,20 +1,21 @@
 
 using System;
 
-namespace DLL.Stats {
+namespace DLL.Stats.Modifiers {
     /// <summary>
     /// This class represents a resource pool, such as FP, HP Stamina etc...
     /// </summary>
     public class ResourcePool
     {
-        public Attribute<int> Max = 0;
         protected int Ammount = 0;
+        public IntAttribute Max;
         public ModifierGroup Cost = new ModifierGroup(); 
         public ModifierGroup Recover = new ModifierGroup(); 
 
-        public ResourcePool(int maxValue){
-            Max = maxValue;
-            Ammount = maxValue;
+        public ResourcePool(int maxValue, int initialValue = -1){
+            Max = new IntAttribute(maxValue);
+            Ammount = initialValue;
+            ContrainResource();
         }
 
         /// <summary>
@@ -24,23 +25,29 @@ namespace DLL.Stats {
         /// <param name="ammount"></param>
         /// <returns></returns>
         public bool TrySpendResource(int ammount){
-            int total = ammount + (int) Cost.CalcModifiers(ammount);  
+            int total = (int) Cost.GetBonusFor(ammount);
+
             if(total > Ammount){
                 return false;
             }
             
-            Ammount -= total;
+            Ammount -= ammount;
             return true;
         }
 
         public void SpendResource( int ammount){
-            Ammount -= ammount + (int) Cost.CalcModifiers(ammount);            
-            if(Ammount < 0) { Ammount = 0; }
+            Ammount -= ammount + (int) Cost.GetBonusFor(ammount);            
+            ContrainResource();
         }
 
         public void RecoverResource(int ammount){
-            Ammount += (int) Recover.CalcModifiers(ammount);
-            if(ammount > Max){ Ammount = Max; }
+            Ammount += (int) Recover.GetBonusFor(ammount);
+            ContrainResource();
+        }
+
+        private void ContrainResource(){
+            if(Ammount < 0){Ammount = 0; return; }
+            if(Ammount > Max. Value){Ammount = Max. Value;}
         }
 
         public bool isDepleted(){
@@ -48,11 +55,11 @@ namespace DLL.Stats {
         }
 
         public bool isFull(){
-            return Ammount == Max;
+            return Ammount == Max. Value;
         }
 
         public double getRatio(){
-            return Ammount/Max;
+            return Ammount/Max. Value;
         }
    
     }
