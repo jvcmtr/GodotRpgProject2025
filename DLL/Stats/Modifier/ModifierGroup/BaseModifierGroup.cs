@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using DLL.enums;
 using DLL.Formulas;
 
 namespace DLL.Stats.Modifiers {
@@ -16,6 +18,10 @@ namespace DLL.Stats.Modifiers {
             else Modifiers.Add(modifier);
 
             return this;
+        }
+
+        public virtual IModifierGroup Add(string Source, double value, EModifier type = EModifier.ADITIVE){
+            return Add(new StaticModifier(Source, value, type));
         }
 
         public virtual IModifierGroup Remove(string source){

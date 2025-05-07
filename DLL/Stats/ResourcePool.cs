@@ -7,12 +7,12 @@ namespace DLL.Stats.Modifiers {
     /// </summary>
     public class ResourcePool
     {
-        protected int Ammount = 0;
+        public int Ammount {get; protected set;} = 0;
         public IntAttribute Max;
         public ModifierGroup Cost = new ModifierGroup(); 
         public ModifierGroup Recover = new ModifierGroup(); 
 
-        public ResourcePool(int maxValue, int initialValue = -1){
+        public ResourcePool(int maxValue, int initialValue = int.MaxValue){
             Max = new IntAttribute(maxValue);
             Ammount = initialValue;
             ContrainResource();
@@ -31,7 +31,7 @@ namespace DLL.Stats.Modifiers {
                 return false;
             }
             
-            Ammount -= ammount;
+            Ammount -= total;
             return true;
         }
 
