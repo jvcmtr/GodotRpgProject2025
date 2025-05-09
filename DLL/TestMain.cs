@@ -12,7 +12,7 @@ public partial class TestMain : SceneTree
 {
 
 	public void Main(){
-
+		TestsRepo.AttributePerformanceTest();
 	}
 
 
