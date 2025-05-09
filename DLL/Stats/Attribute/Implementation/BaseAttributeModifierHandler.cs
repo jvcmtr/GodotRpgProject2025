@@ -7,12 +7,17 @@ using DLL.enums;
 
 
 namespace DLL.Stats {
-    public abstract class AbstractAttribute<T> : IAttribute<T> where T : INumber<T> {
+    public abstract class BaseModifierHandlerAttribute<T> : IAttribute<T> where T : INumber<T> {
         
-        protected ModifierGroup Modifiers = new ModifierGroup();
+        protected IModifierGroup Modifiers = new ModifierGroup();
 
         public abstract T BaseValue {get; protected set;}
         public abstract T Value { get;}
+
+        public BaseModifierHandlerAttribute(T value, IModifierGroup? modifierGroup = null ){
+            BaseValue = value;
+            Modifiers = modifierGroup == null? new ModifierGroup() : modifierGroup;
+        }
 
         public virtual IAttribute<T> AddModifier(string source, double value, EModifier type = EModifier.ADITIVE)
         {
@@ -20,7 +25,7 @@ namespace DLL.Stats {
             return this;
         }
 
-        public IAttribute<T> RemoveModifier(string source)
+        public virtual IAttribute<T> RemoveModifier(string source)
         {
             Modifiers.Remove(source);
             return this;

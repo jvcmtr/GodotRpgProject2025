@@ -1,22 +1,9 @@
-using System;
-using System.Numerics;
-using DLL.enums;
-using Godot;
+using DLL.Stats.Modifiers;
 
 namespace DLL.Stats {
-    public class IntAttribute : AbstractAttribute<int>, IAttribute<int>{
-        
-        public override int BaseValue { get; protected set;}
+    public class IntAttribute : BaseAttribute<int>{
         public override int Value { get => (int) Modifiers.GetBonusFor(BaseValue) ;}
-        public IntAttribute(int value){
-            BaseValue = value;
-        }
-
-        public IntAttribute UpdateBaseValue(int value)
-        {
-            BaseValue = value;
-            return this;
-        }
+        public IntAttribute(int value, IModifierGroup? modifiers = null) : base(value, modifiers ){}
 
     }
 }

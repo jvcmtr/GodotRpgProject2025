@@ -8,7 +8,7 @@ using DLL.Formulas;
 namespace DLL.Stats.Modifiers {
     /// <summary>
     /// </summary>
-    public class PrecalculatedModifierGroup : IEnumerable<IModifier>{
+    public class PrecalculatedModifierGroup : BaseModifierGroup, IEnumerable<IModifier>{
         
         private IList<IModifier> modifiers = new List<IModifier>() ;
         
@@ -19,7 +19,7 @@ namespace DLL.Stats.Modifiers {
         private double ABSOLUTE_PRECALC = 0;
         
 
-        public PrecalculatedModifierGroup Add(IModifier modifier){
+        public override PrecalculatedModifierGroup Add(IModifier modifier){
             var existing = modifiers.FirstOrDefault(m => m.Source == modifier.Source);
             if(existing != null){
                 HandlePrecalc(existing , false);
@@ -31,7 +31,7 @@ namespace DLL.Stats.Modifiers {
             return this;
         }
 
-        public PrecalculatedModifierGroup Remove(string source){
+        public override PrecalculatedModifierGroup Remove(string source){
             var mod = modifiers.FirstOrDefault(m => m.Source == source);
             if(mod == null){
                 return this;
@@ -63,16 +63,6 @@ namespace DLL.Stats.Modifiers {
                     COMPOUND_PRECALC *= isAddModifier? mod.GetBonusToAdd() : (1/mod.GetBonusToAdd());
                     break;
             }
-        }
-
-        public IEnumerator<IModifier> GetEnumerator()
-        {
-            return modifiers.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
         }
     }
 }

@@ -1,19 +1,10 @@
 using System;
-using System.Numerics;
+using DLL.Stats.Modifiers;
 
 namespace DLL.Stats {
-    public class FAttribute : AbstractAttribute<double>, IAttribute<double> {
-        
-        public override double BaseValue { get; protected set;}
-        public override double Value => Modifiers.GetBonusFor(BaseValue); 
-        public FAttribute(double value){
-            BaseValue = value;
-        }
+    public class FAttribute : BaseAttribute<double>{
 
-        public FAttribute UpdateBaseValue(double value)
-        {
-            BaseValue = value;
-            return this;
-        }
+        public override double Value => Modifiers.GetBonusFor(BaseValue); 
+        public FAttribute(int value, IModifierGroup? modifiers = null) : base(value, modifiers ){}
     }
 }
