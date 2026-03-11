@@ -33,7 +33,7 @@ namespace DLL.Stats.Modifiers {
         }
 
         public double GetBonusFor(double BaseValue){
-            return ModFormula.GetBonusFor(BaseValue, Modifiers);
+            return ModFormula.CalcBonusFor(BaseValue, Modifiers);
         }
 
         public IEnumerator<IModifier> GetEnumerator()

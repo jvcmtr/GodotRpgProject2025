@@ -5,18 +5,11 @@ using System;
 using System.Linq;
 
 namespace DLL.Formulas {
-    public static class ModFormula {
+    public static class StatsFormula {
 
-        public static double CalcBonusFor(double BaseValue, 
-            double aditive,
-            double multiplicative,
-            double compound, 
-            double absolute
-        ){
-            return (( BaseValue + aditive) * multiplicative * compound ) + absolute;
-        }
+        
 
-        public static double CalcBonusFor(double baseValue, IList<IModifier> modifiers)
+        public static int CalcMaxHealth()
         {
             double aditive = 0, multiplicative = 1, compound = 1, absolute = 0;
             
@@ -40,7 +33,7 @@ namespace DLL.Formulas {
                 }
             }
             
-            return CalcBonusFor(baseValue, aditive, multiplicative, compound, absolute);
+            return GetBonusFor(baseValue, aditive, multiplicative, compound, absolute);
         }
 
     }

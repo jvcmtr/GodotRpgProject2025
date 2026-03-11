@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "924a7384a9c221be",
+    "type": "split",
+    "children": [
+      {
+        "id": "df54dc663b7b752f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7380772218b4c978",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentation/Combat/RASC.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RASC"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fc89f170580d45c4",
+    "type": "split",
+    "children": [
+      {
+        "id": "5e585cf4fd2c01d5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "86b2cf64a5ee62dc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "1529952f38bea599",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "615c373147cbb006",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fce8fbf6ada500ef",
+    "type": "split",
+    "children": [
+      {
+        "id": "189f17019e801f39",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59924b33b5169ce5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "DLL/Models/Player.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Player"
+            }
+          },
+          {
+            "id": "16cb7d869fdda086",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "DLL/Models/Player.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Player"
+            }
+          },
+          {
+            "id": "04f9fc8fc7abbb1e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "e1587939c9f7d19a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "DLL/Models/Player.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Player"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "7380772218b4c978",
+  "lastOpenFiles": [
+    "Documentation/Base_Infra/RASC.md",
+    "Documentation/Base_Infra/EModifiers.md",
+    "Documentation/EngineSpecific/RASC.md",
+    "Documentation/Core/Actions/RASC.md",
+    "Documentation/Core/Actions/Actions.md",
+    "Documentation/EngineSpecific",
+    "Documentation/Estrutura de modulos",
+    "Untitled.canvas",
+    "Documentation/Creatures/RASC.md",
+    "Documentation/Inventory/RASC.md",
+    "Documentation/Core/Player/RASC.md",
+    "Documentation/RASC.md",
+    "Documentation/Combat/RASC.md",
+    "Documentation/Core/Untitled.md",
+    "Documentation/Core/Actions",
+    "Documentation/Creatures",
+    "Documentation/Inventory",
+    "Documentation/Core/Player",
+    "Documentation/Base/Actions",
+    "Documentation/Base/Atributes",
+    "Documentation/Combat",
+    "Documentation/Base_Infra",
+    "Estudo/CSharp/Template Pattern.md",
+    "TO DO/Done/Facilidade de uso nos stats.md",
+    "Estudo/CSharp/Dinamic Type Polymorphism/Static Polimorphism.md",
+    "Estudo/CSharp/Overrides de Operdores.md",
+    "Estudo/CSharp/Dinamic Type Polymorphism/GPT Talk.md",
+    "Estudo/CSharp/Dinamic Type Polymorphism/Dispatch.md",
+    "Estudo/CSharp/Untitled.md",
+    "Infrastructure/VSCode.md",
+    "Estudo/_failedAproaches/AttributeConvenience/IAttribute_Convenience.md",
+    "Estudo/_failedAproaches/AttributeConvenience/IAttribute_Convenience.cs.md",
+    "Estudo/_failedAproaches/AsNumber/AsNumberClass.cs.md",
+    "Estudo/FailedAproaches/AsNumber/AsNumberClass.cs.md",
+    "Estudo/FailedAproaches/AttributeConvenience/IAttribute_Convenience.cs.md",
+    "Documentation/IAttribute_Convenience.md",
+    "Estudo/FailedAproaches/AttributeConvenience/IAttribute_Convenience.md"
+  ]
+}

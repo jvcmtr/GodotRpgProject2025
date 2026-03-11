@@ -8,9 +8,9 @@ namespace DLL.Stats.Modifiers {
     public class ResourcePool
     {
         public int Ammount {get; protected set;} = 0;
-        public IntAttribute Max;
-        public ModifierGroup Cost = new ModifierGroup(); 
-        public ModifierGroup Recover = new ModifierGroup(); 
+        public IAttribute<int> Max {get;}
+        public ModifierGroup Cost {get;} = new ModifierGroup(); 
+        public ModifierGroup Recover {get;} = new ModifierGroup() ; 
 
         public ResourcePool(int maxValue, int initialValue = int.MaxValue){
             Max = new IntAttribute(maxValue);

@@ -43,7 +43,7 @@ namespace DLL.Stats.Modifiers {
 
         public double GetBonusFor(double BaseValue){
             if(isEmpty) return BaseValue;
-            return ModFormula.GetBonusFor(BaseValue, ADITIVE_PRECALC, MULTIPLICATIVE_PRECALC, COMPOUND_PRECALC, ABSOLUTE_PRECALC);
+            return ModFormula.CalcBonusFor(BaseValue, ADITIVE_PRECALC, MULTIPLICATIVE_PRECALC, COMPOUND_PRECALC, ABSOLUTE_PRECALC);
         }
 
         private void HandlePrecalc(IModifier mod, bool isAddModifier = true){

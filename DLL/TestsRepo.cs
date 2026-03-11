@@ -14,64 +14,63 @@ namespace DLL {
 
 		public static void AttributePerformanceTest(){
 			
-			uint ITERATIONS = 50000;
-			GD.Print($"... starting comparative test with {ITERATIONS} iterations : \n");
+			// uint ITERATIONS = 25000;
+			// GD.Print($"... starting comparative test with {ITERATIONS} iterations : \n");
 
-			var Test = new ComparativeTest<IAttribute<int>>()
-				.AddSubject("Lazy", new LazyAttribute(100))
-				.AddSubject("Precalc", new IntAttribute(100, new PrecalculatedModifierGroup()))
-				.AddSubject("Default", new IntAttribute(100))
-				.addTest("ADD DUPLICATED", (dt) => dt.subject.AddModifier($"1", 1.5, EModifier.ADITIVE) )
-				.addTest("ADD", (dt) => dt.subject.AddModifier($"{dt.iteration}", 1.5, EModifier.ADITIVE) )
-				.addTest("GET", (dt) => dt.subject.Value )
-				.addTest("REMOVE", (dt) => dt.subject.RemoveModifier($"{dt.iteration}") )
-				.RunTestsWithProgress( ITERATIONS, true, true)
-				.IncludeSum()
-				.IncludeAvg();
+			// var Test = new ComparativeTest<IAttribute<int>>()
+			// 	.AddSubject("Lazy", new LazyAttribute(100))
+			// 	.AddSubject("Precalc", new IntAttribute(100, new PrecalculatedModifierGroup()))
+			// 	.AddSubject("Default", new IntAttribute(100))
+			// 	.addTest("ADD DUPLICATED", (dt) => dt.subject.AddModifier($"1", 1.5, EModifier.ADITIVE) )
+			// 	.addTest("ADD", (dt) => dt.subject.AddModifier($"{dt.iteration}", 1.5, EModifier.ADITIVE) )
+			// 	.addTest("GET", (dt) => dt.subject.Value )
+			// 	.addTest("REMOVE", (dt) => dt.subject.RemoveModifier($"{dt.iteration}") )
+			// 	.RunTestsWithProgress( ITERATIONS, true, true)
+			// 	.IncludeSum();
 
-			var rawResult = Test.GetFormatedResults();
+			// var rawResult = Test.GetFormatedResults();
 
-			var resultSTR = Test
-				.ClearInterpreters()
-				.addInterpreter("ADD", (a, b) => (int)(a.result.TotalMilliseconds / b["Default", "ADD"].TotalMilliseconds * 100 ) + " %" )
-				.addInterpreter("ADD DUPLICATED", (a, b) => (int)(a.result.TotalMilliseconds / b["Default", "ADD DUPLICATED"].TotalMilliseconds * 100 ) + " %" )
-				.addInterpreter("GET", (a, b) => (int)(a.result.TotalMilliseconds / b["Default", "GET"].TotalMilliseconds * 100 ) + " %" )
-				.addInterpreter("REMOVE", (a, b) => (int)(a.result.TotalMilliseconds / b["Default", "REMOVE"].TotalMilliseconds * 100 ) + " %" )
-				.addInterpreter( Test.SUM , (a, b) => (int)(a.result.TotalMilliseconds / b["Default", Test.SUM ].TotalMilliseconds * 100 ) + " %" )
-				.GetFormatedResults()
-				;
+			// var resultSTR = Test
+			// 	.ClearInterpreters()
+			// 	.addInterpreter("ADD", (a, b) => (int)(a.result.TotalMilliseconds / b["Default", "ADD"].TotalMilliseconds * 100 ) + " %" )
+			// 	.addInterpreter("ADD DUPLICATED", (a, b) => (int)(a.result.TotalMilliseconds / b["Default", "ADD DUPLICATED"].TotalMilliseconds * 100 ) + " %" )
+			// 	.addInterpreter("GET", (a, b) => (int)(a.result.TotalMilliseconds / b["Default", "GET"].TotalMilliseconds * 100 ) + " %" )
+			// 	.addInterpreter("REMOVE", (a, b) => (int)(a.result.TotalMilliseconds / b["Default", "REMOVE"].TotalMilliseconds * 100 ) + " %" )
+			// 	.addInterpreter( Test.SUM , (a, b) => (int)(a.result.TotalMilliseconds / b["Default", Test.SUM ].TotalMilliseconds * 100 ) + " %" )
+			// 	.GetFormatedResults()
+			// 	;
 
 
-			string GetAverage((string subjectName, IAttribute<int> subject, TimeSpan result) current, Table<TimeSpan> otherResults){
-				var v = current.result.TotalNanoseconds;
-				var total = otherResults[current.subjectName, Test.SUM].TotalNanoseconds;
+			// string GetAverage((string subjectName, IAttribute<int> subject, TimeSpan result) current, Table<TimeSpan> otherResults){
+			// 	var v = current.result.TotalNanoseconds;
+			// 	var total = otherResults[current.subjectName, Test.SUM].TotalNanoseconds;
 
-				return ((int) (v/total * 100 )) + " %" ;
-			}
+			// 	return ((int) (v/total * 100 )) + " %" ;
+			// }
 			
-			var ResultPersent = Test
-				.ClearInterpreters()
-				.addInterpreter("ADD", GetAverage)
-				.addInterpreter("ADD DUPLICATED", GetAverage)
-				.addInterpreter("GET", GetAverage)
-				.addInterpreter("REMOVE", GetAverage)
-				.GetFormatedResults();
+			// var ResultPersent = Test
+			// 	.ClearInterpreters()
+			// 	.addInterpreter("ADD", GetAverage)
+			// 	.addInterpreter("ADD DUPLICATED", GetAverage)
+			// 	.addInterpreter("GET", GetAverage)
+			// 	.addInterpreter("REMOVE", GetAverage)
+			// 	.GetFormatedResults();
 
 			
-			GD.Print("Tempo : ");
-			GD.Print(rawResult);
-			GD.Print();
+			// GD.Print("Tempo : ");
+			// GD.Print(rawResult);
+			// GD.Print();
 
-			GD.Print("Comparado ao Default : ");
-			GD.Print(resultSTR);
-			GD.Print();
+			// GD.Print("Comparado ao Default : ");
+			// GD.Print(resultSTR);
+			// GD.Print();
 			
-			GD.Print("% tempo para cada operacao");
-			GD.Print(ResultPersent);
-			GD.Print();
+			// GD.Print("% tempo para cada operacao");
+			// GD.Print(ResultPersent);
+			// GD.Print();
 			
-			GD.Print("Duracao total do teste : " + Test.TotalTestDuration.TotalSeconds + " sec");
-			GD.Print("Overhead da classe de teste : " + Test.GetTestOverhead().TotalSeconds + " sec");
+			// GD.Print("Duracao total do teste : " + Test.TotalTestDuration.TotalSeconds + " sec");
+			// GD.Print("Overhead da classe de teste : " + Test.GetTestOverhead().TotalSeconds + " sec");
 
 		}
 
