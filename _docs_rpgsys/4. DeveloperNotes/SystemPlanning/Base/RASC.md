@@ -14,7 +14,7 @@ Abstract Class AttributeGroupSetter<AttributeGroup>
 ```
 
 #### Compound Action
-[[Documentation/Core/Actions/RASC#Compound Action|Tambem disponivel aqui]]
+[[4. DeveloperNotes/SystemPlanning/Core/Actions/RASC#Compound Action|Tambem disponivel aqui]]
 Podemos adaptar essa estrutura de random para `Random<T>` nesse caso, `T` seria `IAction`
 ```
 //Logica padrão de randomizacao

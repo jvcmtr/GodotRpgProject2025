@@ -58,16 +58,16 @@ Holdable?
 ```
 ```
 #### Class Weapon
-Implement [[Documentation/Inventory/RASC#Interface InventoryEquipment|Interface InventoryEquipment]]
+Implement [[4. DeveloperNotes/SystemPlanning/Inventory/RASC#Interface InventoryEquipment|Interface InventoryEquipment]]
 ```
 ```
 
 #### Class Armour
-Implement [[Documentation/Inventory/RASC#Interface InventoryEquipment|Interface InventoryEquipment]]
+Implement [[4. DeveloperNotes/SystemPlanning/Inventory/RASC#Interface InventoryEquipment|Interface InventoryEquipment]]
 ```
 ```
 
 #### Class Ammunition
-Implement [[Documentation/Inventory/RASC#Interface InventoryEquipment|Interface InventoryEquipment]]
+Implement [[4. DeveloperNotes/SystemPlanning/Inventory/RASC#Interface InventoryEquipment|Interface InventoryEquipment]]
 ```
 ```
