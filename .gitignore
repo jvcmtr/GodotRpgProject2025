@@ -1,8 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
 
-
-_docs/.obsidian
+# Obsidian specific folders and files
+_docs_rpgsys/.obsidian/workspace.json
+_docs_rpgsys/.obsidian/plugins/**
 
 # Launch configurations took some work to configure, definately saving that
 #.vscode/
