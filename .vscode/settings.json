@@ -1,0 +1,12 @@
+{
+    "godot.path": "c:\\Users\\cicer\\Documents\\JV\\z - Godot\\Godot_v4.2.1-stable_mono_win64\\Godot_v4.2.1-stable_mono_win64\\godot.exe",
+    "project.mainscript" : "DLL/TestMain.cs",
+    "debug.address" : "127.0.0.1",
+    "debug.port" : 6007,
+    "files.exclude": {
+        "**/*.svg.import": true,
+        "**/*.png.import": true,
+        "**/*.cs.uid": true,
+        "**/*.gd.uid": true,
+    }
+}

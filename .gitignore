@@ -6,4 +6,6 @@ _docs/.obsidian
 
 # Launch configurations took some work to configure, definately saving that
 #.vscode/
-.vscode/settings.json
+
+# Hide those ugly .uid and .import files godot 4.6 is generating
+# .vscode/settings.json
