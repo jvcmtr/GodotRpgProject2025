@@ -8,6 +8,8 @@ using System;
 namespace DLL	
 {
 
+// Must be scene tree to run with headless godot
+// Must extend node to be assigned to run in godot
 public partial class TestMain : SceneTree
 {
 
