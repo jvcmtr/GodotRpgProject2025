@@ -23,7 +23,7 @@ public partial class TestMain : SceneTree
 		GD.Print("________________________________________________");
 		GD.Print("  TESTING... ");
 		GD.Print("\n");
-
+		
 		Main();
 
 		GD.Print("\n");

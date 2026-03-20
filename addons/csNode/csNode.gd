@@ -6,7 +6,7 @@ var custom_types = []
 const SCAN_FOLDER := "res://DLL/nodes"
 const FILES_SUFIX := ".cs"
 const NODE_PREFIX := "DLL_"
-const DEFAULT_ICON := preload("res://assets/cs.png") # Replace with your own icon
+const DEFAULT_ICON:Texture2D = preload("res://addons/csNode/cs-icon.png") # Replace with your own icon
 
 # Register when the plugin is enabled
 func _enter_tree():
@@ -36,7 +36,6 @@ func scan_and_register_nodes():
 						custom_types.append(type_name)
 			file_name = dir.get_next()
 		dir.list_dir_end()
-
 
 func clear_custom_types():
 	for type_name in custom_types:

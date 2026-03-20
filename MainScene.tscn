@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cog8g8mvkv3er"]
+[gd_scene format=3 uid="uid://cog8g8mvkv3er"]
 
-[ext_resource type="Script" path="res://scripts/Main.gd" id="1_ouu47"]
-[ext_resource type="Script" path="res://DLL/TestMain.cs" id="2_qr25y"]
+[ext_resource type="Script" uid="uid://bor03224gityd" path="res://scripts/Main.gd" id="1_ouu47"]
+[ext_resource type="Script" uid="uid://bmg4tbcvjdo2y" path="res://DLL/TestMain.cs" id="2_qr25y"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1031059811]
 script = ExtResource("1_ouu47")
 
-[node name="CS_Hook" type="Node" parent="."]
+[node name="CS_Hook" type="Node" parent="." unique_id=2105874084]
 unique_name_in_owner = true
 script = ExtResource("2_qr25y")
