@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "4. DeveloperNotes/Infrastructure/Setup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Setup"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 249.5
+    "width": 265.5
   },
   "right": {
     "id": "fce8fbf6ada500ef",
@@ -166,12 +166,34 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "callout-manager:Insert Callout": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "86b2cf64a5ee62dc",
+  "active": "002c4609821ef5c7",
   "lastOpenFiles": [
+    "4. DeveloperNotes/Infrastructure/Setup.md",
+    "4. DeveloperNotes/Infrastructure/README.md",
+    "4. DeveloperNotes/Infrastructure/VSCODE_GODOT/VSCode.md",
+    "4. DeveloperNotes/Infrastructure/VSCODE_GODOT/tests.md",
+    "3. GameDocumentation/README.md",
+    "4. DeveloperNotes/SystemPlanning/EngineSpecific/RASC.md",
+    "4. DeveloperNotes/SystemPlanning/Inventory/RASC.md",
+    "2. SystemDocumentation/README.md",
+    "2. SystemDocumentation/Attributes/EModifiers.md",
+    "1. ProjectOrganization/DependencyMap.canvas",
+    "1. ProjectOrganization/README.md",
+    "1. ProjectOrganization/About.md",
+    "1. ProjectOrganization/Tasks/Features/S1.2 Enemy basic behaviour.md",
+    "1. ProjectOrganization/Tasks/Features/S1.1 Character basic Movement.md",
+    "1. ProjectOrganization/Tasks/Content/G1.1 Basic Player.md",
+    "1. ProjectOrganization/Tasks/Content/G1.2 Basic Enemy.md",
+    "Systems.canvas",
+    "1. ProjectOrganization/Tasks/_Others",
+    "1. ProjectOrganization/Tasks/Untitled.md",
+    "1. ProjectOrganization/Tasks/Content",
+    "1. ProjectOrganization/Tasks/Features",
+    "1. ProjectOrganization/Tasks",
+    "1. ProjectOrganization/Features",
     "README.md",
     "1. ProjectOrganization",
     "RASC.md",
@@ -179,35 +201,13 @@
     "TO DO/Systems/Combat_Actions.md",
     "TO DO/Systems/Weapon_Types.md",
     "TO DO/Systems/Combat_Turns.md",
-    "2. SystemDocumentation/README.md",
-    "3. GameDocumentation/README.md",
     "4. DeveloperNotes/SystemPlanning/RASC.md",
     "TO DO/Done/Facilidade de uso nos stats.md",
     "4. DeveloperNotes/SystemPlanning/Core/Actions/RASC.md",
     "4. DeveloperNotes/SystemPlanning/_DISCARTED_IDEAS",
     "4. DeveloperNotes/SystemPlanning/Core/Actions/Actions.md",
-    "2. SystemDocumentation/Attributes/EModifiers.md",
-    "4. DeveloperNotes/SystemPlanning/Attributes/Untitled.md",
-    "4. DeveloperNotes/SystemPlanning/Base/RASC.md",
     "4. DeveloperNotes/SystemPlanning/Base",
-    "DeveloperNotes/SystemPlanning/Untitled.md",
     "4. DeveloperNotes/SystemPlanning/Attributes",
-    "4. DeveloperNotes/SystemPlanning/Inventory/RASC.md",
-    "4. DeveloperNotes/SystemPlanning/Combat/RASC.md",
-    "4. DeveloperNotes/Infrastructure/README.md",
-    "4. DeveloperNotes/_RASC_TEMP",
-    "4. DeveloperNotes/Study/GDSharp/Funcionalidades Basicas.md",
-    "4. DeveloperNotes/Study/CSharp/Template Pattern.md",
-    "4. DeveloperNotes/Study/CSharp/Overrides de Operdores.md",
-    "4. DeveloperNotes/Infrastructure/VSCODE_GODOT/tests.md",
-    "4. DeveloperNotes/Infrastructure/VSCODE_GODOT",
-    "DeveloperNotes/Infrastructure/Untitled.md",
-    "4. DeveloperNotes/Infrastructure/VSCODE_GODOT/VSCode.md",
-    "4. DeveloperNotes/README.md",
-    "3. GameDocumentation",
-    "4. DeveloperNotes/SystemPlanning",
-    "4. DeveloperNotes",
-    "2. SystemDocumentation",
-    "Untitled.canvas"
+    "4. DeveloperNotes/_RASC_TEMP"
   ]
 }

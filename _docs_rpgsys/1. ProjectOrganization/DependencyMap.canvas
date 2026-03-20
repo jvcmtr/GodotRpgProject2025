@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"340428ac5fa4cc9c","type":"text","text":"# Gestão de combate\nturnos, vitoria, derrota","x":-392,"y":-380,"width":384,"height":85},
+		{"id":"a9c7a860d835b3a6","type":"text","text":"# Sistema de combate\nAtributos, efeitos, ações","x":120,"y":-380,"width":400,"height":90},
+		{"id":"0c8d2da504f2dc6e","type":"text","text":"# Sistema de Level up","x":440,"y":-221,"width":441,"height":65},
+		{"id":"aebb8cc9233f24d6","type":"text","text":"# Sistema de Habilidaes\npassivas, ativas, de arma etc...","x":440,"y":-116,"width":441,"height":91},
+		{"id":"94c4f6798886cb05","type":"text","text":"# ...","x":440,"y":14,"width":250,"height":60},
+		{"id":"aacc30e57d44c35e","type":"text","text":"# Sistema de salvamento","x":120,"y":-529,"width":400,"height":60},
+		{"id":"dbe917cc5b6e8117","type":"text","text":"# Game State\n(menus, combate, overworls, save)","x":-384,"y":-544,"width":368,"height":91},
+		{"id":"1229b00c1948bc44","type":"text","text":"# Sistema de inventario","x":-709,"y":-135,"width":400,"height":60},
+		{"id":"5a36a9e2ae15886f","type":"text","text":"# HUD","x":-634,"y":-265,"width":250,"height":60},
+		{"id":"e42a5b9178f74096","type":"text","text":"# vestimentas e aparencia do jogador","x":-960,"y":80,"width":400,"height":80},
+		{"id":"b388674bcd188b71","type":"text","text":"# Sistema de movimentação","x":-960,"y":-544,"width":400,"height":60},
+		{"id":"12ee1123593e02af","type":"text","text":"# Sistema de interações overword","x":-1280,"y":-315,"width":440,"height":100},
+		{"id":"d06e38266f9a8a0d","type":"text","text":"# Sistema de Dialogos e Missões","x":-1270,"y":-145,"width":420,"height":80},
+		{"id":"3bcc609bbc03245f","type":"text","text":"# Sistema de compra e venda","x":-1640,"y":-145,"width":329,"height":98}
+	],
+	"edges":[
+		{"id":"e92f77a3e2806a8d","fromNode":"dbe917cc5b6e8117","fromSide":"bottom","toNode":"340428ac5fa4cc9c","toSide":"top"},
+		{"id":"7b5451db34bca086","fromNode":"b388674bcd188b71","fromSide":"left","toNode":"12ee1123593e02af","toSide":"top"},
+		{"id":"cbd143cf46ff5fd2","fromNode":"5a36a9e2ae15886f","fromSide":"bottom","toNode":"1229b00c1948bc44","toSide":"top"},
+		{"id":"3c8274cab5fafbd3","fromNode":"12ee1123593e02af","fromSide":"bottom","toNode":"d06e38266f9a8a0d","toSide":"top"},
+		{"id":"3441675cf44a7296","fromNode":"b388674bcd188b71","fromSide":"bottom","toNode":"e42a5b9178f74096","toSide":"top"},
+		{"id":"87451a5d68d5bcca","fromNode":"1229b00c1948bc44","fromSide":"bottom","toNode":"e42a5b9178f74096","toSide":"top"},
+		{"id":"e9ef476f96104923","fromNode":"dbe917cc5b6e8117","fromSide":"left","toNode":"5a36a9e2ae15886f","toSide":"top"},
+		{"id":"dfa96841421a44b7","fromNode":"340428ac5fa4cc9c","fromSide":"right","toNode":"a9c7a860d835b3a6","toSide":"left"},
+		{"id":"beffa146f17cd22c","fromNode":"a9c7a860d835b3a6","fromSide":"bottom","toNode":"0c8d2da504f2dc6e","toSide":"left"},
+		{"id":"12b71d04c4c35967","fromNode":"a9c7a860d835b3a6","fromSide":"bottom","toNode":"aebb8cc9233f24d6","toSide":"left"},
+		{"id":"12fb027342638f3f","fromNode":"a9c7a860d835b3a6","fromSide":"bottom","toNode":"94c4f6798886cb05","toSide":"left"},
+		{"id":"9d555d09608e2113","fromNode":"12ee1123593e02af","fromSide":"left","toNode":"3bcc609bbc03245f","toSide":"top"},
+		{"id":"2e9072958f5079c4","fromNode":"dbe917cc5b6e8117","fromSide":"right","toNode":"aacc30e57d44c35e","toSide":"left"}
+	]
+}
